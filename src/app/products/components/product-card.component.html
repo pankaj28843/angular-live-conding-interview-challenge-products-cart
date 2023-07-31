@@ -1,0 +1,11 @@
+<div class="product-card">
+  <h2>{{ product.name }}</h2>
+  <app-product-price
+    [currency]="'$'"
+    [amount]="product.price"
+  ></app-product-price>
+  <app-quantity-adjuster
+    (quantityChange)="updateQuantity($event)"
+  ></app-quantity-adjuster>
+  <button (click)="addToCart()">Add to Cart</button>
+</div>
