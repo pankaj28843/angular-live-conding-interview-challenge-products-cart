@@ -1,1 +1,1 @@
-export { ProductsListComponent as ProductsListPage } from './products-list.page';
+export { ProductsListComponent as ProductsListPage } from './products-list.component';

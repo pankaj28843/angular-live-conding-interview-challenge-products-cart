@@ -4,8 +4,13 @@
     [currency]="'$'"
     [amount]="product.price"
   ></app-product-price>
-  <app-quantity-adjuster
-    (quantityChange)="updateQuantity($event)"
-  ></app-quantity-adjuster>
-  <button (click)="addToCart()">Add to Cart</button>
+  <div *ngIf="getQuantity() > 0; else addToCartBlock">
+    <app-quantity-adjuster
+      (quantityChange)="updateQuantity($event)"
+      [quantity]="getQuantity()"
+    ></app-quantity-adjuster>
+  </div>
+  <ng-template #addToCartBlock>
+    <button (click)="addToCart()">Add to Cart</button>
+  </ng-template>
 </div>
