@@ -7,6 +7,8 @@ const routes: Routes = [
     loadChildren: () =>
       import('./products/products.module').then((m) => m.ProductsModule),
   },
+  // redirect to `products` from the root
+  { path: '', redirectTo: 'products', pathMatch: 'full' },
 ];
 
 @NgModule({
